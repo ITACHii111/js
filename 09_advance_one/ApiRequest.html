@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    <!-- 0	UNSENT	Client has been created. open() not called yet.
+    1	OPENED	open() has been called.
+    2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+    3	LOADING	Downloading; responseText holds partial data.
+    4	DONE	The operation is complete. -->
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET', requestUrl)
+    let data
+    xhr.onreadystatechange = function(){ 
+        console.log(xhr.readyState)                     // continuously monitor the state of request                    
+        if(xhr.readyState === 4){
+            data = JSON.parse(this.responseText)        // conversion of string into object
+            console.log(data.avatar_url)
+
+
+            // assignment to fetch the data and upload a picture and the count of follower on the web server done successfully
+            // const img = document.createElement('img')
+            // img.id = Math.round(Math.random()*10 + 1)
+            // img.src = data.avatar_url
+            // img.alt = "Next big sensation"
+            // img.width = 460
+            // img.height = 345
+            // document.body.appendChild(img)
+
+            // const h1 = document.createElement('h1')
+            // const addText = document.createTextNode(`Followers: ${data.followers}`)
+            // h1.appendChild(addText)
+            // h1.style.backgroundColor = "green"
+            // document.body.appendChild(h1)
+            
+            console.log(data.followers)        // undefined since data coming from url is mostly in the form of string and an object so we convert the data in the object and then access it
+        }
+    }                     
+
+    xhr.send()
+
+    // assignment
+    
+
+    //const followers = document.createElement('p')
+    
+
+
+
+
+</script>
+</html>
