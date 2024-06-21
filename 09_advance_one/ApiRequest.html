@@ -25,19 +25,19 @@
 
 
             // assignment to fetch the data and upload a picture and the count of follower on the web server done successfully
-            // const img = document.createElement('img')
-            // img.id = Math.round(Math.random()*10 + 1)
-            // img.src = data.avatar_url
-            // img.alt = "Next big sensation"
-            // img.width = 460
-            // img.height = 345
-            // document.body.appendChild(img)
+            const img = document.createElement('img')
+            img.id = Math.round(Math.random()*10 + 1)
+            img.src = data.avatar_url
+            img.alt = "Next big sensation"
+            img.width = 460
+            img.height = 345
+            document.body.appendChild(img)
 
-            // const h1 = document.createElement('h1')
-            // const addText = document.createTextNode(`Followers: ${data.followers}`)
-            // h1.appendChild(addText)
-            // h1.style.backgroundColor = "green"
-            // document.body.appendChild(h1)
+            const h1 = document.createElement('h1')
+            const addText = document.createTextNode(`Followers: ${data.followers}`)
+            h1.appendChild(addText)
+            h1.style.backgroundColor = "green"
+            document.body.appendChild(h1)
             
             console.log(data.followers)        // undefined since data coming from url is mostly in the form of string and an object so we convert the data in the object and then access it
         }
